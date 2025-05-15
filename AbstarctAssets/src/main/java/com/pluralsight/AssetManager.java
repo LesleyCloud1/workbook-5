@@ -14,11 +14,15 @@ assets.add(new House("My house", "2025-05-14", 500000,
 "1801 Pearl St", 1, 2000, 8000));
 assets.add(new House("Tulum Beach House", "2025-05-14", 500000,
 "Carretera Tulum km7.2", 2, 1500, 6000));
+
 //Add Vehicle objects to list
 assets.add(new Vehicle("Lesley's Truck", "2024-04-04", 100000,
 "GMC Sierra AT4X", 2024, 10000));
 assets.add(new Vehicle("Lesley's Tesla", "2024-01-01", 70000,
 "Tesla Ymodel", 2024, 30000));
+
+// Add Cash Object
+assets.add(new Cash("Emergency Fund", "2025-05-15", 50000));
 
 //Loop through assets and display its information
 for (Asset asset : assets) {
@@ -37,6 +41,8 @@ System.out.printf("Current Value: $%.2f\n", asset.getValue());
         Vehicle vehicle = (Vehicle) asset; // downcast to Vehicle
         System.out.println("Make/Model: " + vehicle.getMakeModel());
         System.out.println("Year: " + vehicle.getYear());
+    } else if (asset instanceof Cash) {
+        System.out.println("Note: This is cash. Value does not change.");
     }
 
     System.out.println(); //blank line for separation

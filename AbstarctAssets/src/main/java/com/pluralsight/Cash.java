@@ -6,6 +6,6 @@ public class Cash extends Asset{
     }
     @Override
 public double getValue() {
-    return getOriginalCost(): //Cash value doesnt change.
+    return getOriginalCost(); //Cash value doesnt change.
     }
 }
