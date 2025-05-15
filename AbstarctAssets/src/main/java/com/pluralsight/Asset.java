@@ -1,7 +1,7 @@
 package com.pluralsight;
 /*Base class (Asset) represents any general asset with basic details like description, date
-acquiredand cost.*/
-public class Asset {
+acquiredand cost.*/// Abstract class cannot be instantiated directly
+public abstract class Asset {
     //Private instance variable properties, only accessed through getter and setter methods.
     private String description;//Short description of the asset
     private String dateAcquired;//when the asset was acquired
@@ -14,11 +14,10 @@ public class Asset {
         this.dateAcquired = dateAcquired;
         this.originalCost = originalCost;
     }
-    //Getter for description
+    //Getter and Setters
     public String getDescription() {
         return description;
     }
-    //Setter for description
     public void setDescription(String description) {
         this.description = description;
     }
@@ -28,7 +27,6 @@ public class Asset {
     public void setDateAcquired(String dateAcquired) {
         this.dateAcquired = dateAcquired;
     }
-
     public double getOriginalCost() {
         return originalCost;
     }
@@ -38,8 +36,6 @@ public class Asset {
     }
     //Method that returns the value of the asset
     //In the base class, we just return the original cost
-    //This method will be overridden by subclasses like House and Vehicle
-    public double getValue() {
-        return originalCost;
-    }
+    //This method will be overridden by subclasses like House and Vehicle, each Asset type will define its value.
+    public abstract double getValue();
 }
